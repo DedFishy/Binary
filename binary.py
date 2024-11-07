@@ -9,7 +9,7 @@ binary_pos = -1
 
 REDUCTION_FACTOR = 0.8
 
-img = PIL.Image.open("crow.png")
+img = PIL.Image.open("crow2.png")
 
 img = img.resize((img.width, int(img.height/2)))
 img.thumbnail((
@@ -21,7 +21,7 @@ output = []
 
 def get_output(pixel):
     global binary_pos
-    if pixel[3] != 0:
+    if pixel[3] >= 125:
         binary_pos += 1
         if binary_pos >= len(binary_text):
             binary_pos = 0
